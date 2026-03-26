@@ -1,14 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <title>Zo Site</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
-</html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LUCY.ROCKS | The Totebag</title>
+    <style>
+        :root {
+            --bg-color: #0a0a0a;
+            --text-main: #f4f4f0;
+            --text-muted: #888888;
+            --accent: #d4af37; /* Old money gold */
+        }
+        body {
+            margin: 0; padding: 0; background-color: var(--bg-color); color: var(--text-main); font-family: 'Times New Roman', serif; display: flex; justify-content: center;
+        }
+        .container {
+            display: flex; flex-wrap: wrap; max-width: 1200px; width: 100%; min-height: 100vh;
+        }
+        /* Left Column - The Brand */
+        .brand-section {
+            flex: 1; min-width: 300px; padding: 50px; display: flex; flex-direction: column; justify-content: center; border-right: 1px solid #222;
+        }
+        .brand-section h1 {
+            font-size: 3rem; letter-spacing: 5px; margin-bottom: 10px; text-transform: uppercase;
+        }
+        .brand-section p {
+            font-size: 1.2rem; color: var(--text-muted); margin-bottom: 40px; font-style: italic;
+        }
+        .product-image {
+            width: 100%; height: 400px; background-color: #1a1a1a; display: flex; align-items: center; justify-content: center; margin-bottom: 30px; border: 1px solid #333;
+        }
+        .buy-button {
+            background-color: var(--text-main); color: var(--bg-color); padding: 15px 30px; font-size: 1.1rem; text-transform: uppercase; letter-spacing: 2px; border: none; cursor: pointer; transition: 0.3s; width: 100%; font-weight: bold;
+        }
+        .buy-button:hover { background-color: var(--accent); }
 
+        /* Right Column - The Automated Store */
+        .store-section {
+            flex: 1; min-width: 300px; padding: 50px; display: flex; flex-direction: column;
+        }
+        .store-section h2 {
+            font-size: 2rem; border-bottom: 1px solid #333; padding-bottom: 20px; margin-bottom: 30px; font-family: 'Helvetica Neue', sans-serif; font-weight: 300; letter-spacing: 2px;
+        }
+        .affiliate-item {
+            display: flex; align-items: center; margin-bottom: 30px; padding: 20px; background: #111; transition: 0.3s; border: 1px solid transparent;
+        }
+        .affiliate-item:hover { border-color: var(--text-muted); }
+        .item-placeholder {
+            width: 80px; height: 80px; background: #222; margin-right: 20px;
+        }
+        .item-details h3 { margin: 0 0 5px 0; font-size: 1.2rem; font-family: 'Helvetica Neue', sans-serif;}
+        .item-details a { color: var(--accent); text-decoration: none; font-size: 0.9rem; letter-spacing: 1px; text-transform: uppercase;}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="brand-section">
+            <h1>Lucy.Rocks</h1>
+            <p>Silent wealth. Unspoken aesthetic.</p>
+            <div class="product-image">
+                <span style="color: #555;">[ High-Res Totebag Image Here ]</span>
+            </div>
+            <button class="buy-button">Acquire Now - ₹1,499</button>
+        </div>
+
+        <div class="store-section">
+            <h2>Trending Finds</h2>
+            
+            <div class="affiliate-item">
+                <div class="item-placeholder"></div>
+                <div class="item-details">
+                    <h3>Minimalist Mechanical Keyboard</h3>
+                    <a href="#">View on Amazon ↗</a>
+                </div>
+            </div>
+
+            <div class="affiliate-item">
+                <div class="item-placeholder"></div>
+                <div class="item-details">
+                    <h3>Ambient Warm LED Bar</h3>
+                    <a href="#">View on Amazon ↗</a>
+                </div>
+            </div>
+            
+            <div class="affiliate-item">
+                <div class="item-placeholder"></div>
+                <div class="item-details">
+                    <h3>Vintage Desk Clock</h3>
+                    <a href="#">View on Amazon ↗</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
