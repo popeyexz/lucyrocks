@@ -1,0 +1,15 @@
+{
+  "name": "lucy-rocks",
+  "local_port": 52014,
+  "entrypoint": "bun run dev",
+  "publish": {
+    "label": "lucy-rocks",
+    "type": "http",
+    "entrypoint": "bun run prod",
+    "published_port": 51785,
+    "env": {
+      "NODE_ENV": "production",
+      "ZO_CLIENT_IDENTITY_TOKEN": "none"
+    }
+  }
+}
