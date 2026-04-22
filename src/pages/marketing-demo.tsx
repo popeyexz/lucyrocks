@@ -1198,23 +1198,15 @@ function FooterColumn({ title, links }: { title: string; links: string[] }) {
       <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
         {links.map((item) => (
           <li key={item} style={{ marginBottom: "0.75rem" }}>
-            <a
-              href="#"
+            <span
               style={{
                 fontSize: "0.8rem",
                 color: S.dim,
-                textDecoration: "none",
-                transition: "color 0.3s",
+                cursor: "default",
               }}
-              onMouseEnter={(e) =>
-                (e.currentTarget.style.color = S.muted)
-              }
-              onMouseLeave={(e) =>
-                (e.currentTarget.style.color = S.dim)
-              }
             >
               {item}
-            </a>
+            </span>
           </li>
         ))}
       </ul>
