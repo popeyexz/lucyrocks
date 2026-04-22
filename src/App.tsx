@@ -4,7 +4,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 
 export default function App() {
   return (
-    <ThemeProvider>
+    <ThemeProvider defaultTheme="dark">
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<MarketingDemo />} />
