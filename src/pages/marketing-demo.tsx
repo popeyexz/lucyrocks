@@ -77,7 +77,7 @@ const S = {
   sans: "'Inter', 'Helvetica Neue', Arial, sans-serif",
 } as const;
 
-export default function LucyRocks() {
+export default function MarketingDemo() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [email, setEmail] = useState("");
