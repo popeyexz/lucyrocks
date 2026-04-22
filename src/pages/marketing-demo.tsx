@@ -161,20 +161,14 @@ export default function LucyRocks() {
               <a
                 key={link}
                 href={`#${link.toLowerCase()}`}
+                className="lr-nav-link"
                 style={{
                   fontSize: "0.65rem",
                   letterSpacing: "3px",
                   textTransform: "uppercase",
-                  color: S.muted,
                   textDecoration: "none",
                   transition: "color 0.3s",
                 }}
-                onMouseEnter={(e) =>
-                  (e.currentTarget.style.color = S.gold)
-                }
-                onMouseLeave={(e) =>
-                  (e.currentTarget.style.color = S.muted)
-                }
               >
                 {link}
               </a>
@@ -185,25 +179,14 @@ export default function LucyRocks() {
           <div style={{ display: "flex", alignItems: "center", gap: "1rem" }}>
             <a
               href="#shop"
+              className="lr-nav-cta"
               style={{
                 fontSize: "0.6rem",
                 letterSpacing: "3px",
                 textTransform: "uppercase",
-                border: `1px solid ${S.borderLight}`,
                 padding: "0.5rem 1rem",
-                color: S.gold,
                 textDecoration: "none",
                 transition: "all 0.3s",
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.backgroundColor = S.gold;
-                e.currentTarget.style.color = S.bg;
-                e.currentTarget.style.borderColor = S.gold;
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.backgroundColor = "transparent";
-                e.currentTarget.style.color = S.gold;
-                e.currentTarget.style.borderColor = S.borderLight;
               }}
             >
               Acquire
@@ -359,25 +342,16 @@ export default function LucyRocks() {
 
         <a
           href="#shop"
+          className="lr-hero-cta"
           style={{
             display: "inline-block",
             fontSize: "0.6rem",
             letterSpacing: "4px",
             textTransform: "uppercase",
-            border: `1px solid ${S.cream}`,
             padding: "1rem 2.5rem",
-            color: S.cream,
             textDecoration: "none",
             transition: "all 0.5s ease",
             position: "relative",
-          }}
-          onMouseEnter={(e) => {
-            e.currentTarget.style.backgroundColor = S.cream;
-            e.currentTarget.style.color = S.bg;
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.backgroundColor = "transparent";
-            e.currentTarget.style.color = S.cream;
           }}
         >
           Acquire the Totebag — ₹1,499
@@ -654,6 +628,7 @@ export default function LucyRocks() {
             </div>
             <a
               href="#"
+              className="lr-view-all"
               style={{
                 display: "flex",
                 alignItems: "center",
@@ -661,16 +636,9 @@ export default function LucyRocks() {
                 fontSize: "0.6rem",
                 letterSpacing: "3px",
                 textTransform: "uppercase",
-                color: S.muted,
                 textDecoration: "none",
                 transition: "color 0.3s",
               }}
-              onMouseEnter={(e) =>
-                (e.currentTarget.style.color = S.gold)
-              }
-              onMouseLeave={(e) =>
-                (e.currentTarget.style.color = S.muted)
-              }
             >
               View all <IconArrowRight size={11} />
             </a>
@@ -897,17 +865,11 @@ export default function LucyRocks() {
                   <a
                     key={idx}
                     href={href}
+                    className="lr-social-link"
                     style={{
-                      color: S.dim,
                       transition: "color 0.3s",
                       textDecoration: "none",
                     }}
-                    onMouseEnter={(e) =>
-                      (e.currentTarget.style.color = S.gold)
-                    }
-                    onMouseLeave={(e) =>
-                      (e.currentTarget.style.color = S.dim)
-                    }
                   >
                     <Icon size={16} />
                   </a>
@@ -961,6 +923,39 @@ export default function LucyRocks() {
         }
         * { box-sizing: border-box; }
         html { scroll-behavior: smooth; }
+
+        /* ── Hover / focus-visible affordances ─────────────────── */
+        .lr-nav-link { color: ${S.muted}; }
+        .lr-nav-link:hover, .lr-nav-link:focus-visible { color: ${S.gold}; }
+
+        .lr-nav-cta { color: ${S.gold}; border: 1px solid ${S.borderLight}; background-color: transparent; }
+        .lr-nav-cta:hover, .lr-nav-cta:focus-visible { background-color: ${S.gold}; color: ${S.bg}; border-color: ${S.gold}; }
+
+        .lr-hero-cta { color: ${S.cream}; border: 1px solid ${S.cream}; background-color: transparent; }
+        .lr-hero-cta:hover, .lr-hero-cta:focus-visible { background-color: ${S.cream}; color: ${S.bg}; }
+
+        .lr-view-all { color: ${S.muted}; }
+        .lr-view-all:hover, .lr-view-all:focus-visible { color: ${S.gold}; }
+
+        .lr-social-link { color: ${S.dim}; }
+        .lr-social-link:hover, .lr-social-link:focus-visible { color: ${S.gold}; }
+
+        .lr-footer-link { color: ${S.dim}; }
+        .lr-footer-link:hover, .lr-footer-link:focus-visible { color: ${S.muted}; }
+
+        .lr-acquire-btn { background-color: ${S.cream}; color: ${S.bg}; }
+        .lr-acquire-btn:hover, .lr-acquire-btn:focus-visible { background-color: ${S.gold}; }
+
+        .lr-newsletter-btn { background-color: ${S.cream}; color: ${S.bg}; border: 1px solid ${S.cream}; }
+        .lr-newsletter-btn:hover, .lr-newsletter-btn:focus-visible { background-color: ${S.gold}; border-color: ${S.gold}; }
+
+        .lr-find-card { background-color: transparent; }
+        .lr-find-card:hover { background-color: ${S.bgCard}; }
+        .lr-find-link { color: ${S.muted}; }
+        .lr-find-card:hover .lr-find-link, .lr-find-link:focus-visible { color: ${S.gold}; }
+
+        .lr-pillar-card { background-color: transparent; }
+        .lr-pillar-card:hover { background-color: ${S.bgHover}; }
       `}</style>
     </div>
   );
@@ -969,11 +964,9 @@ export default function LucyRocks() {
 /* ── Sub-components ──────────────────────────────────────────── */
 
 function AcquireButton() {
-  const [hovered, setHovered] = useState(false);
   return (
     <button
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
+      className="lr-acquire-btn"
       style={{
         width: "100%",
         fontSize: "0.6rem",
@@ -983,8 +976,6 @@ function AcquireButton() {
         border: "none",
         cursor: "pointer",
         transition: "all 0.4s ease",
-        backgroundColor: hovered ? S.gold : S.cream,
-        color: S.bg,
         fontFamily: S.sans,
       }}
     >
@@ -994,20 +985,15 @@ function AcquireButton() {
 }
 
 function NewsletterButton() {
-  const [hovered, setHovered] = useState(false);
   return (
     <button
       type="submit"
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
+      className="lr-newsletter-btn"
       style={{
         padding: "0.875rem 1.5rem",
         fontSize: "0.6rem",
         letterSpacing: "3px",
         textTransform: "uppercase",
-        border: `1px solid ${hovered ? S.gold : S.cream}`,
-        backgroundColor: hovered ? S.gold : S.cream,
-        color: S.bg,
         cursor: "pointer",
         transition: "all 0.3s ease",
         fontFamily: S.sans,
@@ -1026,15 +1012,12 @@ function FindCard({
   item: (typeof curatedFinds)[0];
   hasBorder: boolean;
 }) {
-  const [hovered, setHovered] = useState(false);
   return (
     <div
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
+      className="lr-find-card"
       style={{
         padding: "2.5rem",
         borderRight: hasBorder ? `1px solid ${S.border}` : "none",
-        backgroundColor: hovered ? S.bgCard : "transparent",
         transition: "background-color 0.3s ease",
       }}
     >
@@ -1112,11 +1095,11 @@ function FindCard({
         </span>
         <a
           href={item.link}
+          className="lr-find-link"
           style={{
             fontSize: "0.6rem",
             letterSpacing: "3px",
             textTransform: "uppercase",
-            color: hovered ? S.gold : S.muted,
             textDecoration: "none",
             transition: "color 0.3s",
           }}
@@ -1135,15 +1118,12 @@ function PillarCard({
   pillar: (typeof pillars)[0];
   hasBorder: boolean;
 }) {
-  const [hovered, setHovered] = useState(false);
   return (
     <div
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
+      className="lr-pillar-card"
       style={{
         padding: "2.5rem",
         borderRight: hasBorder ? `1px solid ${S.border}` : "none",
-        backgroundColor: hovered ? S.bgHover : "transparent",
         transition: "background-color 0.3s ease",
       }}
     >
@@ -1200,18 +1180,12 @@ function FooterColumn({ title, links }: { title: string; links: string[] }) {
           <li key={item} style={{ marginBottom: "0.75rem" }}>
             <a
               href="#"
+              className="lr-footer-link"
               style={{
                 fontSize: "0.8rem",
-                color: S.dim,
                 textDecoration: "none",
                 transition: "color 0.3s",
               }}
-              onMouseEnter={(e) =>
-                (e.currentTarget.style.color = S.muted)
-              }
-              onMouseLeave={(e) =>
-                (e.currentTarget.style.color = S.dim)
-              }
             >
               {item}
             </a>
